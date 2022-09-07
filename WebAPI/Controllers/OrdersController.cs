@@ -19,58 +19,43 @@ public class OrdersController : ControllerBase
     public IActionResult GetAll()
     {
         var result = _orderService.GetAll();
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
+        if (!result.Success) return BadRequest(result);
 
         return Ok(result);
     }
-    
+
     [HttpGet("[action]")]
     public IActionResult GetByOrderId(int id)
     {
         var result = _orderService.GetByOrderId(id);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
+        if (!result.Success) return BadRequest(result);
 
         return Ok(result);
     }
-    
+
     [HttpPost("[action]")]
     public IActionResult Add(Order order)
     {
         var result = _orderService.Add(order);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
+        if (!result.Success) return BadRequest(result);
 
         return Ok(result);
     }
-    
+
     [HttpPut("[action]")]
     public IActionResult Update(Order order)
     {
         var result = _orderService.Update(order);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
+        if (!result.Success) return BadRequest(result);
 
         return Ok(result);
     }
-    
+
     [HttpDelete("[action]")]
     public IActionResult Delete(Order order)
     {
         var result = _orderService.Delete(order);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
+        if (!result.Success) return BadRequest(result);
 
         return Ok(result);
     }

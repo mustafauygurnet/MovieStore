@@ -9,7 +9,7 @@ public class GenreValidator : AbstractValidator<Genre>
     {
         RuleFor(g => g.GenreName).NotNull();
         RuleFor(g => g.GenreName).NotEmpty();
-        
+
         RuleFor(g => g.GenreName).NotNull();
         RuleFor(g => g.GenreName).NotEmpty();
     }

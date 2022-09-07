@@ -22,7 +22,7 @@ public class DirectorManager : IDirectorService
 
     public IDataResult<Director?> GetByDirectorId(int directorId)
     {
-        return new SuccessDataResult<Director?>(_directorDal.Get(d=>d.DirectorId == directorId));
+        return new SuccessDataResult<Director?>(_directorDal.Get(d => d.DirectorId == directorId));
     }
 
     public IResult Add(Director director)

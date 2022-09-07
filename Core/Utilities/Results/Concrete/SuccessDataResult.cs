@@ -11,11 +11,11 @@ public class SuccessDataResult<T> : DataResult<T>
     public SuccessDataResult(T data) : base(data, true)
     {
     }
-    
+
     public SuccessDataResult(string message) : base(default, message, true)
     {
     }
-    
+
     public SuccessDataResult() : base(default, true)
     {
     }

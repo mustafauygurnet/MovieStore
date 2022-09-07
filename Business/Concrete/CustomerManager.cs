@@ -22,7 +22,7 @@ public class CustomerManager : ICustomerService
 
     public IDataResult<Customer?> GetByCustomerId(int customerId)
     {
-        return new SuccessDataResult<Customer?>(_customerDal.Get(c=>c.CustomerId == customerId));
+        return new SuccessDataResult<Customer?>(_customerDal.Get(c => c.CustomerId == customerId));
     }
 
     public IResult Add(Customer customer)

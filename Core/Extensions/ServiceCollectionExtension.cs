@@ -7,9 +7,6 @@ public static class ServiceCollectionExtension
 {
     public static void AddDependencyResolvers(this IServiceCollection services, params ICoreModule[] modules)
     {
-        foreach (var module in modules)
-        {
-            module.Load(services);
-        }
+        foreach (var module in modules) module.Load(services);
     }
 }

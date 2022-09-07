@@ -9,8 +9,8 @@ namespace Business.BusinessAspects;
 
 public class SecuredOperation : MethodInterception
 {
-    private readonly string[] _roles;
     private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly string[] _roles;
 
     public SecuredOperation(string roles)
     {
@@ -20,16 +20,12 @@ public class SecuredOperation : MethodInterception
 
     protected override void OnBefore(IInvocation invocation)
     {
-       var claims = _httpContextAccessor.HttpContext.User.ClaimsRole();
+        var claims = _httpContextAccessor.HttpContext.User.ClaimsRole();
 
-       foreach (var claim in claims)
-       {
-           if (_roles.Contains(claim))
-           {
-               return;
-           }
-       }
+        foreach (var claim in claims)
+            if (_roles.Contains(claim))
+                return;
 
-       throw new Exception("Yetkiniz Yok");
+        throw new Exception("Yetkiniz Yok");
     }
 }

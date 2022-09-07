@@ -7,9 +7,9 @@ public class MovieValidator : AbstractValidator<Movie>
 {
     public MovieValidator()
     {
-        RuleFor(m => m.MovieName ).NotNull();
+        RuleFor(m => m.MovieName).NotNull();
         RuleFor(m => m.MovieName).NotEmpty();
-        
+
         RuleFor(m => m.MovieYear).NotNull();
         RuleFor(m => m.MovieYear).NotEmpty();
         RuleFor(m => m.MovieYear).GreaterThan(1870);

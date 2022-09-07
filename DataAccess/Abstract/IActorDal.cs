@@ -5,5 +5,4 @@ namespace DataAccess.Abstract;
 
 public interface IActorDal : IEntityRepository<Actor>
 {
-    
 }

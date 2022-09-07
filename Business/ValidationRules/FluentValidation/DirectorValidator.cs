@@ -9,7 +9,7 @@ public class DirectorValidator : AbstractValidator<Director>
     {
         RuleFor(d => d.FirstName).NotNull();
         RuleFor(d => d.FirstName).NotEmpty();
-        
+
         RuleFor(d => d.LastName).NotNull();
         RuleFor(d => d.LastName).NotEmpty();
     }

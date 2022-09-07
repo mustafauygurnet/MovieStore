@@ -9,7 +9,7 @@ public class ActorValidator : AbstractValidator<Actor>
     {
         RuleFor(a => a.FirstName).NotNull();
         RuleFor(a => a.FirstName).NotEmpty();
-        
+
         RuleFor(a => a.LastName).NotNull();
         RuleFor(a => a.LastName).NotEmpty();
     }

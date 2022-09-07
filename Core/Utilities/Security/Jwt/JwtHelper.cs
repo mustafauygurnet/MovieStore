@@ -11,8 +11,8 @@ namespace Core.Utilities.Security.Jwt;
 
 public class JwtHelper : IToken
 {
-    private DateTime _accessTokenExpiration;
     private readonly TokenOptions _tokenOptions;
+    private DateTime _accessTokenExpiration;
 
     public JwtHelper(IConfiguration configuration)
     {
@@ -22,13 +22,13 @@ public class JwtHelper : IToken
     public AccessToken CreateJwtToken(User user, IEnumerable<OperationClaimOfUserDto> operationClaims)
     {
         _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
-        SecurityKey securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
-        SigningCredentials signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
-        JwtSecurityToken jwt = _CreateJwtSecurityToken(signingCredentials, user, operationClaims);
+        var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
+        var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
+        var jwt = _CreateJwtSecurityToken(signingCredentials, user, operationClaims);
         var handler = new JwtSecurityTokenHandler();
         var token = handler.WriteToken(jwt);
-        
-        AccessToken accessToken = new AccessToken
+
+        var accessToken = new AccessToken
         {
             Token = token,
             Expiration = _accessTokenExpiration
@@ -40,14 +40,14 @@ public class JwtHelper : IToken
     private JwtSecurityToken _CreateJwtSecurityToken(SigningCredentials signingCredentials, User user,
         IEnumerable<OperationClaimOfUserDto> operationClaims)
     {
-        JwtSecurityToken jwtSecurityToken = new JwtSecurityToken
+        var jwtSecurityToken = new JwtSecurityToken
         (
-            issuer: _tokenOptions.Issuer,
-            audience: _tokenOptions.Audience,
-            claims: _SetClaims(user, operationClaims),
-            notBefore: DateTime.Now,
-            expires: _accessTokenExpiration,
-            signingCredentials: signingCredentials
+            _tokenOptions.Issuer,
+            _tokenOptions.Audience,
+            _SetClaims(user, operationClaims),
+            DateTime.Now,
+            _accessTokenExpiration,
+            signingCredentials
         );
         return jwtSecurityToken;
     }

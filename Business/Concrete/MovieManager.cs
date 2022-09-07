@@ -22,7 +22,7 @@ public class MovieManager : IMovieService
 
     public IDataResult<Movie?> GetByMovieId(int movieId)
     {
-        return new SuccessDataResult<Movie?>(_movieDal.Get(m=>m.MovieId == movieId));
+        return new SuccessDataResult<Movie?>(_movieDal.Get(m => m.MovieId == movieId));
     }
 
     public IResult Add(Movie movie)

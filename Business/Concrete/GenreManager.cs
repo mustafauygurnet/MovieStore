@@ -22,7 +22,7 @@ public class GenreManager : IGenreService
 
     public IDataResult<Genre?> GetByGenreId(int genreId)
     {
-        return new SuccessDataResult<Genre?>(_genreDal.Get(g=>g.GenreId == genreId));
+        return new SuccessDataResult<Genre?>(_genreDal.Get(g => g.GenreId == genreId));
     }
 
     public IResult Add(Genre genre)

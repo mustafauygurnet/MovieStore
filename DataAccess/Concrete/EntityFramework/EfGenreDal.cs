@@ -5,7 +5,6 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework;
 
-public class EfGenreDal: EfEntityRepositoryBase<Genre,MovieStoreDbContext>,IGenreDal
+public class EfGenreDal : EfEntityRepositoryBase<Genre, MovieStoreDbContext>, IGenreDal
 {
-    
 }

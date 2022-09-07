@@ -5,7 +5,6 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework;
 
-public class EfCustomerDal: EfEntityRepositoryBase<Customer,MovieStoreDbContext>,ICustomerDal
+public class EfCustomerDal : EfEntityRepositoryBase<Customer, MovieStoreDbContext>, ICustomerDal
 {
-    
 }

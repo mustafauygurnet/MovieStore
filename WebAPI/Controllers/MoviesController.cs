@@ -24,7 +24,7 @@ public class MoviesController : ControllerBase
 
         return Ok(result);
     }
-    
+
     [HttpGet("[action]")]
     public IActionResult GetByMovieId(int id)
     {
@@ -34,7 +34,7 @@ public class MoviesController : ControllerBase
 
         return Ok(result);
     }
-    
+
     [HttpPost("[action]")]
     public IActionResult Add(Movie movie)
     {
@@ -44,7 +44,7 @@ public class MoviesController : ControllerBase
 
         return Ok(result);
     }
-    
+
     [HttpPut("[action]")]
     public IActionResult Update(Movie movie)
     {
@@ -54,7 +54,7 @@ public class MoviesController : ControllerBase
 
         return Ok(result);
     }
-    
+
     [HttpDelete("[action]")]
     public IActionResult Delete(Movie movie)
     {

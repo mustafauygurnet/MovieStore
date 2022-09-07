@@ -1,3 +1,4 @@
+using System.Reflection;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
@@ -6,6 +7,7 @@ using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Module = Autofac.Module;
 
 namespace Business.DependencyResolvers.Autofac;
 
@@ -31,7 +33,7 @@ public class AutofacBusinessModule : Module
         builder.RegisterType<EfOrderDal>().As<IOrderDal>().SingleInstance();
         builder.RegisterType<OrderManager>().As<IOrderService>().SingleInstance();
 
-        var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+        var assembly = Assembly.GetExecutingAssembly();
 
         builder.RegisterAssemblyTypes(assembly)
             .AsImplementedInterfaces()

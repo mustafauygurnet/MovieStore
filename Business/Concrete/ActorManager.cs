@@ -22,7 +22,7 @@ public class ActorManager : IActorService
 
     public IDataResult<Actor?> GetByActorId(int actorId)
     {
-        return new SuccessDataResult<Actor?>(_actorDal.Get(a=>a.ActorId == actorId));
+        return new SuccessDataResult<Actor?>(_actorDal.Get(a => a.ActorId == actorId));
     }
 
     public IResult Add(Actor actor)

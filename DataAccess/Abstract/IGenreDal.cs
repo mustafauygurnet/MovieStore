@@ -5,5 +5,4 @@ namespace DataAccess.Abstract;
 
 public interface IGenreDal : IEntityRepository<Genre>
 {
-    
 }
