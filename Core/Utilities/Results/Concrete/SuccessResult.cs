@@ -1,6 +1,6 @@
-using Core.DataAccess.Utilities.Results.Abstract;
+using Core.Utilities.Results.Abstract;
 
-namespace Core.DataAccess.Utilities.Results.Concrete;
+namespace Core.Utilities.Results.Concrete;
 
 public class SuccessResult : Result
 {

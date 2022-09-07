@@ -1,4 +1,4 @@
-namespace Core.DataAccess.Utilities.Results.Abstract;
+namespace Core.Utilities.Results.Abstract;
 
 public class DataResult<T> : Result, IDataResult<T>
 {
