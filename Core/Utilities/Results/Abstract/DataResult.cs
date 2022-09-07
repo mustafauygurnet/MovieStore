@@ -1,6 +1,6 @@
 namespace Core.Utilities.Results.Abstract;
 
-public class DataResult<T> : Result, IDataResult<T>
+public abstract class DataResult<T> : Result, IDataResult<T>
 {
     public string Message { get; }
     public bool Success { get; }
