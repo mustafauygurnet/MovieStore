@@ -20,6 +20,6 @@ public class MovieStoreDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(
-            @"Server = (localdb)/MSSQLLocalDB; Database = MovieStoreDb; Trusted_Connection = true");
+            @"Server = (localdb)\MSSQLLocalDB; Database = MovieStoreDb; Trusted_Connection = true");
     }
 }
