@@ -1,3 +1,7 @@
+using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+builder.Services.AddDependencyResolvers(new CoreModule());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
