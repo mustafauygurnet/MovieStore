@@ -5,6 +5,7 @@ using Business.Abstract;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
+using Core.Utilities.Security.Jwt;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Module = Autofac.Module;
@@ -32,6 +33,9 @@ public class AutofacBusinessModule : Module
 
         builder.RegisterType<EfOrderDal>().As<IOrderDal>().SingleInstance();
         builder.RegisterType<OrderManager>().As<IOrderService>().SingleInstance();
+        
+        builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+        builder.RegisterType<IToken>().As<JwtHelper>().SingleInstance();
 
         var assembly = Assembly.GetExecutingAssembly();
 
