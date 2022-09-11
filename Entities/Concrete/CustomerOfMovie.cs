@@ -2,10 +2,9 @@ using Core.Entities.Abstract;
 
 namespace Entities.Concrete;
 
-public class Order : IEntity
+public class CustomerOfMovie : IEntity
 {
-    public int OrderId { get; set; }
+    public int Id { get; set; }
     public int CustomerId { get; set; }
     public int MovieId { get; set; }
-    public DateTime Date { get; set; }
 }

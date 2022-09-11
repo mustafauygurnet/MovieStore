@@ -7,5 +7,4 @@ public class Actor : IEntity
     public int ActorId { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public IEnumerable<int> FilmIds { get; set; }
 }
